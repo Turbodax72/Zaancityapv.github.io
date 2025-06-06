@@ -14,6 +14,15 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
 
+  const menuItems = [
+    { id: "home", title: "Home", icon: Home },
+    { id: "strafbepaling", title: "Strafbepaling", icon: Scale },
+    { id: "openbare-orde", title: "Openbare Orde", icon: AlertTriangle },
+    { id: "overheid", title: "Overheid", icon: Shield },
+    { id: "criminaliteit", title: "Criminaliteit", icon: Users },
+    { id: "overige", title: "Overige", icon: Book }
+  ];
+
   const categories = [
     {
       id: 1,
