@@ -681,7 +681,7 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <Scale className="h-8 w-8 text-blue-600" />
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Springbank APV</h1>
+                <h1 className="text-xl font-bold text-gray-900">Zaancity APV</h1>
                 <p className="text-xs text-gray-500">Algemene Plaatselijke Verordening</p>
               </div>
             </div>
@@ -846,8 +846,8 @@ const Index = () => {
       <footer className="bg-white border-t mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-500 text-sm">
-            <p>© 2024 Springbank Roleplay - Algemene Plaatselijke Verordening</p>
-            <p className="mt-2">Door het betreden van Springbank gaat u automatisch akkoord met deze regelgeving.</p>
+            <p>© 2024 Zaancity Roleplay - Algemene Plaatselijke Verordening</p>
+            <p className="mt-2">Door het betreden van Zaancity gaat u automatisch akkoord met deze regelgeving.</p>
           </div>
         </div>
       </footer>
