@@ -97,7 +97,7 @@ const Index = () => {
       fullContent: "Het is niet toegestaan om gebruik te maken van software/hulpmiddelen (cheats ofwel hacks) van derde partijen om profijt te krijgen in het spel.",
       examples: [
         "Gebruik van externe software voor voordeel in het spel",
-        "Springbank Roleplay werkt conform de privacyregeling",
+        "Zaancity Roleplay werkt conform de privacyregeling",
         "Besluiten worden genomen op basis van videomateriaal en informatiebronnen",
         "PC-checks zijn niet verplicht maar kunnen onschuld aantonen",
         "Indien geen toestemming voor PC-check, kans op preventieve permanente ban"
@@ -124,7 +124,7 @@ const Index = () => {
     },
     5: {
       title: "Meta-gaming",
-      fullContent: "Het is niet toegestaan om informatie te gebruiken die is verkregen buiten het spel om, of om in call te zitten in de breedste zin wanneer je in Springbank bent.",
+      fullContent: "Het is niet toegestaan om informatie te gebruiken die is verkregen buiten het spel om, of om in call te zitten in de breedste zin wanneer je in Zaancity bent.",
       examples: [
         "Een bericht op Discord sturen waar je bent",
         "Een eigen server hebben voor je bedrijf of gang met andere burgers erin (zonder toestemming van management)"
@@ -159,6 +159,296 @@ const Index = () => {
         "Een zelfmoordscenario opzetten",
         "Van een brug af springen zonder parachute"
       ]
+    },
+    9: {
+      title: "Combat-logging",
+      fullContent: "Het is niet toegestaan om tijdens een actief scenario of 10 minuten daarna de stad te verlaten op welke manier dan ook.",
+      examples: [
+        "De stad verlaten tijdens een actieve achtervolging",
+        "Verbinding verbreken tijdens een overval",
+        "Game afsluiten tijdens een gevecht"
+      ],
+      note: "Mocht je door een crash de stad moeten verlaten, heb je 5 minuten om terug te komen."
+    },
+    10: {
+      title: "Combat-stashing",
+      fullContent: "Het is niet toegestaan om wapens of voorwerpen die je in een scenario actief hebt gebruikt binnen 10 minuten te stashen.",
+      examples: [
+        "Wapens wegzetten in een kluis direct na een schietpartij",
+        "Gestolen spullen snel opbergen tijdens een achtervolging",
+        "Drugs verstoppen terwijl je nog achtervolgd wordt"
+      ]
+    },
+    11: {
+      title: "New Life Rule",
+      fullContent: "Als jouw karakter is komen te overlijden wordt er verwacht dat jij alle roleplay voor jouw dood vergeten bent.",
+      examples: [
+        "Teruggaan naar de plek waar je bent overleden",
+        "Wraak nemen op de persoon die je heeft gedood",
+        "Informatie gebruiken van voor je dood"
+      ]
+    },
+    12: {
+      title: "Microfoon",
+      fullContent: "Het is tijdens het spelen ten allen tijden verplicht om een werkende microfoon te hebben waarin je duidelijk te verstaan bent.",
+      examples: [
+        "Earrapen door te hard te praten",
+        "Muziek afspelen door je microfoon",
+        "Storende soundpads gebruiken",
+        "Blazen in de microfoon"
+      ]
+    },
+    13: {
+      title: "Talen",
+      fullContent: "Er wordt verwacht dat je de Nederlands of Engelse taal beheerst binnen Zaancity Roleplay.",
+      examples: [
+        "Andere talen gebruiken op een provocerende manier",
+        "Tijdens staffzaken andere talen dan Nederlands spreken",
+        "Schelden in vreemde talen om de regels te omzeilen"
+      ]
+    },
+    14: {
+      title: "Belediging",
+      fullContent: "Het is niet toegestaan om aanstootgevende teksten te plaatsen of uit te spreken op welke mogelijke manier dan ook.",
+      examples: [
+        "Hedendaagse ziektes gebruiken als belediging",
+        "Seksuele opmerkingen maken",
+        "Racistische uitingen",
+        "Toxic gedrag vertonen",
+        "Ongepaste namen gebruiken voor accounts of karakters"
+      ]
+    },
+    15: {
+      title: "Deelname aan het verkeer",
+      fullContent: "Het is niet toegestaan om onrealistische rijstijlen aan te nemen.",
+      examples: [
+        "Gebruik maken van 'jumps' of 'ramps' in de stad",
+        "Harder dan 100 km/u rijden op onverharde wegen (tenzij off-road voertuig)",
+        "Onverantwoorde pits uitvoeren boven 100 km/u",
+        "Lichtere voertuigen laten pitten door zwaardere voertuigen"
+      ]
+    },
+    16: {
+      title: "Reporting",
+      fullContent: "De in-game functie om spelers te rapporteren (/report) is alleen bedoeld voor gevallen dat dit ter plekke opgelost kan worden.",
+      examples: [
+        "Report spammen (meerdere reports binnen 5 minuten)",
+        "Reports maken voor eigen rechter spelen",
+        "Onnodige reports maken voor kleine problemen"
+      ]
+    },
+    17: {
+      title: "Greenzone",
+      fullContent: "Binnen de greenzone is het verboden om enige vorm van geweld te gebruiken.",
+      examples: [
+        "Vechten bij het ziekenhuis",
+        "Schieten bij de pechhulp",
+        "Geweld gebruiken bij het gemeentehuis",
+        "Een greenzone invluchten tijdens een scenario"
+      ],
+      note: "Greenzones: Pechhulp, Ziekenhuis, Gemeentehuis en winkelcentrum, Bitcoin converter"
+    },
+    18: {
+      title: "Kledingregels",
+      fullContent: "Het is niet toegestaan om de standaard-outfit te dragen tijdens roleplay scenario's.",
+      examples: [
+        "De default kleding aanhouden",
+        "Doorzichtige lichaamsdelen hebben",
+        "Armen die door je t-shirt heenkomen",
+        "Niet naar een kledingwinkel gaan om je outfit aan te passen"
+      ]
+    },
+    19: {
+      title: "Copbaiting",
+      fullContent: "Het is niet toegestaan om opzettelijk de aandacht proberen te trekken van politieagenten zonder goede aanleiding.",
+      examples: [
+        "Wegrijden bij een reguliere controle zonder illegale spullen",
+        "Opzettelijk de politie lokken voor actie",
+        "Politie van hun werk houden zonder reden"
+      ]
+    },
+    20: {
+      title: "Impersonatie overheidsmedewerker",
+      fullContent: "Het is niet toegestaan om jezelf te vermommen als een overheidsmedewerker.",
+      examples: [
+        "Politie-uniform dragen als burger",
+        "Jezelf voordoen als agent",
+        "Kogel- of steekwerende vesten dragen met overheidsteksten"
+      ]
+    },
+    21: {
+      title: "Overheidsvoertuigen",
+      fullContent: "Het is niet toegestaan om overheidsvoertuigen te tunen of te besturen zonder in dienst te zijn.",
+      examples: [
+        "Politieauto's tunen",
+        "Ambulances besturen als burger",
+        "Overheidsvoertuigen gebruiken buiten dienst"
+      ],
+      note: "Uitzondering: diefstal voor goed roleplay scenario"
+    },
+    22: {
+      title: "Gedrag tegen overheidsmedewerkers",
+      fullContent: "Er wordt verwacht dat je eerlijk bent over je verwondingen en meewerkt met ambulancezorg.",
+      examples: [
+        "Liegen tegen ambulancepersoneel over verwondingen",
+        "Niet meewerken aan medische roleplay",
+        "Hulpdiensten lokken om ze te ontvoeren",
+        "Te veel overheidsmedewerkers ontvoeren (max 1 per 6 in dienst)"
+      ]
+    },
+    23: {
+      title: "Criminaliteit & Ambtenaren",
+      fullContent: "Voor overheidsmedewerkers is het niet toegestaan om zich bezig te houden met illegale praktijken.",
+      examples: [
+        "Drugs verkopen als politieagent",
+        "Wapens smokkelen als ambulancemedewerker",
+        "Dienstwapens meenemen naar huis (behalve specialisten)",
+        "Illegale spullen in bezit hebben als ambtenaar"
+      ],
+      note: "24 uur tijd om illegale spullen weg te doen bij start overheidsbaan"
+    },
+    24: {
+      title: "Overvallen & Oplichten",
+      fullContent: "Het is alleen toegestaan om iemand te overvallen indien deze persoon bezig is met criminele activiteiten.",
+      examples: [
+        "Iemand overvallen die drugs plukt",
+        "Scammen met wapens (max 2 miljoen)",
+        "Rippen van iemand met wapenholster",
+        "Overvallen van personen op illegale locaties"
+      ],
+      note: "Verboden: banksaldo, huizen/loodsen leegroven, verified gang kluizen"
+    },
+    25: {
+      title: "Overval Regels",
+      fullContent: "Per hostage krijg je 2 eisen, maximaal 8 eisen bij een overval.",
+      examples: [
+        "Hostages pakken in kledingwinkels",
+        "Setup gooien binnen 10 minuten na groenlicht",
+        "Hypercars gebruiken bij overvallen",
+        "Kennis gebruiken als hostage"
+      ],
+      note: "Na 15 minuten zonder politie mag je op eigen risico weg"
+    },
+    26: {
+      title: "Wraak en liquidaties",
+      fullContent: "Het is alleen toegestaan om iemand te liquideren als het slachtoffer de reden weet.",
+      examples: [
+        "Iemand vermoorden zonder uitleg",
+        "Wraak nemen binnen 24 uur na je eigen dood",
+        "Wraak nemen na 48 uur"
+      ]
+    },
+    27: {
+      title: "Overvallen",
+      fullContent: "Het is niet toegestaan om een overval te starten een half uur voor en na restarts.",
+      examples: [
+        "Hostage rippen na fouilleren",
+        "Bekenden gebruiken als hostage",
+        "Onderhandelaar gijzelen",
+        "Aanrijden tijdens achtervolging na overval"
+      ]
+    },
+    28: {
+      title: "Campen",
+      fullContent: "Het is niet toegestaan om te campen op locaties betrokken bij illegale praktijken.",
+      examples: [
+        "Wachten bij drugsdealers om mensen te overvallen",
+        "Campen bij witwas depot",
+        "Lang rondhangen bij illegale locaties (100 meter, zonder reden)"
+      ]
+    },
+    29: {
+      title: "Rippen",
+      fullContent: "Het is niet toegestaan om dezelfde persoon binnen een uur meerdere malen te overvallen.",
+      examples: [
+        "Iemand 3x in een uur rippen",
+        "Auto leegplunderen zonder wapen",
+        "Rippen en daarna vermoorden",
+        "Wapens terugeisen van lagere agenten"
+      ],
+      note: "Uitzondering: als persoon kleding zodanig verandert dat hij onherkenbaar is"
+    },
+    30: {
+      title: "Witwassen",
+      fullContent: "Witwassers overvallen is toegestaan onder bepaalde voorwaarden.",
+      examples: [
+        "Witwasser overvallen die ongepaste kleding draagt",
+        "Handelen op witwas app meldingen",
+        "Toeterende witwassers overvallen",
+        "Overvallen buiten het tijdsbestek van 1 uur"
+      ]
+    },
+    31: {
+      title: "Bodycams",
+      fullContent: "Het gebruik van bodycam beelden is alleen toegestaan onder bepaalde voorwaarden.",
+      examples: [
+        "Burgers gebruiken bodycam zonder fysieke camera",
+        "Overheidsmedewerkers zonder bodycam gebruiken beelden",
+        "Dashcam beelden gebruiken van privé voertuigen"
+      ],
+      note: "Voor staffzaken mag elk videomateriaal gebruikt worden"
+    },
+    32: {
+      title: "Herkenning",
+      fullContent: "Het is alleen toegestaan om iemand aan zijn/haar stem te herkennen onder bepaalde voorwaarden.",
+      examples: [
+        "Content creators herkennen aan stem",
+        "Stemmen herkennen door voicechanger heen",
+        "Stemmen herkennen met gezichtsbedekkende kleding",
+        "Onrealistische voicechangers gebruiken (robotstemmen)"
+      ]
+    },
+    33: {
+      title: "Alternatieve karakters",
+      fullContent: "Het is niet toegestaan om gebruik te maken van alternatieve accounts voor voordeel.",
+      examples: [
+        "Alt account maken om ban te omzeilen",
+        "Startersgeld overschrijven naar hoofdaccount",
+        "Account delen met anderen",
+        "Nieuw account maken zonder ticket"
+      ]
+    },
+    34: {
+      title: "Wisselen van baan",
+      fullContent: "Bij het wisselen tussen overheidsbanen of verified groeperingen dien je 7 dagen te wachten.",
+      examples: [
+        "Van politie naar ambulance zonder wachttijd",
+        "Van gang naar overheid direct switchen",
+        "Van overheid naar verified groepering zonder pauze"
+      ]
+    },
+    35: {
+      title: "Real life trading",
+      fullContent: "Het is nooit toegestaan om goederen in Zaancity te verkopen tegen echt geld.",
+      examples: [
+        "Voertuigen verkopen voor echt geld",
+        "Donatievoertuigen ruilen",
+        "Spullen weggeven aan vertrekkende spelers",
+        "Startersgeld vragen van anderen"
+      ]
+    },
+    36: {
+      title: "Bedrijven/huizen",
+      fullContent: "Het is niet toegestaan om eigenaar te zijn van twee bedrijven of meer dan 2 huizen.",
+      examples: [
+        "Twee bedrijven bezitten",
+        "Bedrijven verkopen aan spelers (moet via gemeente)",
+        "Beveiligingscamera's plaatsen buiten eigen terrein",
+        "Meer dan 2 huizen op naam hebben"
+      ]
+    },
+    37: {
+      title: "Graphic packs",
+      fullContent: "Bepaalde graphic packs en beeldscherminstellingen kunnen oneerlijk voordeel opleveren.",
+      examples: [
+        "Permanente daglicht packs gebruiken",
+        "Kogel tracer packs",
+        "Custom beeldverhouding instellen",
+        "FOV aanpassingen voor voordeel",
+        "Kill effect packs",
+        "Potato graphic packs"
+      ],
+      note: "NVE is toegestaan zolang het binnen alle regels valt"
     }
   };
 
