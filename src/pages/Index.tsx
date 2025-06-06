@@ -505,9 +505,9 @@ const Index = () => {
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Algemene Plaatselijke Verordening
             </h1>
-            <p className="text-xl text-gray-600 mb-2">Springbank Roleplay</p>
+            <p className="text-xl text-gray-600 mb-2">Zaancity Roleplay</p>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Door het betreden van Springbank gaat u automatisch akkoord met deze wet- en regelgeving.
+              Door het betreden van Zaancity gaat u automatisch akkoord met deze wet- en regelgeving.
             </p>
           </div>
 
