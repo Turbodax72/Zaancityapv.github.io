@@ -32,19 +32,19 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "1 dag ban + 20u taakstraf",
+      name: "60u taakstraf",
       color: "bg-yellow-100 text-yellow-800",
       description: "Matige overtreding"
     },
     {
       id: 3,
-      name: "2 dagen ban + 25u taakstraf",
+      name: "100u taakstraf",
       color: "bg-orange-100 text-orange-800",
       description: "Ernstige overtreding"
     },
     {
       id: 4,
-      name: "3 dagen ban + 30u taakstraf",
+      name: "3 dagen ban + 50u taakstraf",
       color: "bg-red-100 text-red-800",
       description: "Zeer ernstige overtreding"
     },
