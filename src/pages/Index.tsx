@@ -492,10 +492,43 @@ const Index = () => {
     { id: 37, title: "Graphic packs", category: "overige", penalty: 6, description: "Grafische modificaties" }
   ];
 
-  const filteredArticles = articles.filter(article =>
-    article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    article.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Enhanced filtering function for keyword search
+  const filteredArticles = articles.filter(article => {
+    const searchLower = searchTerm.toLowerCase();
+    
+    // Search in title and description
+    const titleMatch = article.title.toLowerCase().includes(searchLower);
+    const descriptionMatch = article.description.toLowerCase().includes(searchLower);
+    
+    // Search in article details content
+    const articleDetail = articleDetails[article.id];
+    let contentMatch = false;
+    
+    if (articleDetail) {
+      // Search in full content
+      const fullContentMatch = articleDetail.fullContent?.toLowerCase().includes(searchLower);
+      
+      // Search in examples
+      const examplesMatch = articleDetail.examples?.some(example => 
+        example.toLowerCase().includes(searchLower)
+      );
+      
+      // Search in power gaming content
+      const powerGamingMatch = articleDetail.powerGaming?.toLowerCase().includes(searchLower);
+      
+      // Search in power examples
+      const powerExamplesMatch = articleDetail.powerExamples?.some(example => 
+        example.toLowerCase().includes(searchLower)
+      );
+      
+      // Search in notes
+      const noteMatch = articleDetail.note?.toLowerCase().includes(searchLower);
+      
+      contentMatch = fullContentMatch || examplesMatch || powerGamingMatch || powerExamplesMatch || noteMatch;
+    }
+    
+    return titleMatch || descriptionMatch || contentMatch;
+  });
 
   const renderContent = () => {
     if (selectedSection === "home") {
@@ -642,6 +675,11 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4 capitalize">
             {selectedSection.replace('-', ' ')}
           </h2>
+          {searchTerm && (
+            <p className="text-gray-600 mb-4">
+              {sectionArticles.length} resultaten gevonden voor "{searchTerm}"
+            </p>
+          )}
         </div>
 
         <div className="space-y-4">
@@ -667,6 +705,14 @@ const Index = () => {
               </CardContent>
             </Card>
           ))}
+          {sectionArticles.length === 0 && searchTerm && (
+            <Card>
+              <CardContent className="p-6 text-center">
+                <p className="text-gray-500">Geen artikelen gevonden voor "{searchTerm}" in deze sectie.</p>
+                <p className="text-sm text-gray-400 mt-2">Probeer een andere zoekterm of kijk in andere secties.</p>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </div>
     );
