@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Search, Menu, X, Book, Shield, Scale, Users, AlertTriangle, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,11 +6,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSection, setSelectedSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   const categories = [
     {
@@ -64,14 +65,93 @@ const Index = () => {
     }
   ];
 
-  const menuItems = [
-    { id: "home", title: "Home", icon: Home },
-    { id: "strafbepaling", title: "Strafbepaling", icon: Scale },
-    { id: "openbare-orde", title: "Openbare Orde", icon: AlertTriangle },
-    { id: "overheid", title: "Overheid", icon: Shield },
-    { id: "criminaliteit", title: "Criminele Activiteiten", icon: Users },
-    { id: "overige", title: "Overige Bepalingen", icon: Book }
-  ];
+  const articleDetails = {
+    1: {
+      title: "Fail-RP en Powergaming",
+      fullContent: "FailRP: Het is niet toegestaan om opzettelijk een roleplay van slechte kwaliteit uit te spelen of de roleplay te verstoren. Je behoort je aan te passen aan de situatie waar jij je in bevindt.",
+      examples: [
+        "Tijdens een achtervolging je voertuig in de garage zetten om te voorkomen dat je herkend wordt",
+        "Het expres slecht/niet afmaken van een scenario of te verstoren, ondanks de situatie",
+        "Het stelen uit kofferbakken door bijvoorbeeld iemand van de motor af te trappen",
+        "Het niet realistisch reageren op je verwondingen. Bijvoorbeeld meteen op de motor stappen, nadat je in je benen geschoten bent",
+        "Indien je een harde crash hebt gemaakt, of een crashbeeld hebt, mag je niet meteen door met het scenario. Je moet 30 seconden wachten"
+      ],
+      powerGaming: "Powergaming: Het is niet toegestaan om opzettelijk de roleplay op een oneerlijke of onrealistische manier te vormen, bijvoorbeeld door de verhaallijn op een onnatuurlijke manier te veranderen of door onrealistische dwang uit te oefenen op de andere partij.",
+      powerExamples: [
+        "Een agent ontvoeren om een signalering te verwijderen of om iets te bekijken in het politiesysteem (MEOS)",
+        "Het gebruiken van enkel /me commands om een actie uit te voeren zonder roleplay",
+        "Het gebruiken van de Z-spier om spelers te vinden tijdens scenario's"
+      ]
+    },
+    2: {
+      title: "Cheats",
+      fullContent: "Het is niet toegestaan om gebruik te maken van software/hulpmiddelen (cheats ofwel hacks) van derde partijen om profijt te krijgen in het spel.",
+      examples: [
+        "Gebruik van externe software voor voordeel in het spel",
+        "Springbank Roleplay werkt conform de privacyregeling",
+        "Besluiten worden genomen op basis van videomateriaal en informatiebronnen",
+        "PC-checks zijn niet verplicht maar kunnen onschuld aantonen",
+        "Indien geen toestemming voor PC-check, kans op preventieve permanente ban"
+      ]
+    },
+    3: {
+      title: "Bugs en exploits",
+      fullContent: "Het is niet toegestaan om opzettelijk misbruik te maken van een bug/exploit om voordeel voor jouzelf of anderen te behalen.",
+      examples: [
+        "Misbruiken van bepaalde animaties (zoals het schoppen vanaf een motor)",
+        "Emote bug abuse om te glitchen",
+        "Dupliceren van items",
+        "In het algemeen het misbruik maken van een bug om daar je voordeel uit te halen"
+      ],
+      note: "Wanneer het managementteam van mening is dat het misbruik van de bug en/of exploit te veel invloed heeft op de economie, kunnen zij besluiten om af te wijken van de standaard strafmaatregelen en een account wipe toe te passen."
+    },
+    4: {
+      title: "Out Of Character",
+      fullContent: "Het is niet toegestaan om je karakter te breken door OOC-informatie te gebruiken in-game.",
+      examples: [
+        "Termen gebruiken die het in het echte leven niet van toepassing zijn, zoals 'report', 'reloggen', 'desync', 'rdm'",
+        "Benoemen dat iemand een artikel van het APV heeft overtreden"
+      ]
+    },
+    5: {
+      title: "Meta-gaming",
+      fullContent: "Het is niet toegestaan om informatie te gebruiken die is verkregen buiten het spel om, of om in call te zitten in de breedste zin wanneer je in Springbank bent.",
+      examples: [
+        "Een bericht op Discord sturen waar je bent",
+        "Een eigen server hebben voor je bedrijf of gang met andere burgers erin (zonder toestemming van management)"
+      ]
+    },
+    6: {
+      title: "VDM (Vehicle Deathmatch)",
+      fullContent: "Het is niet toegestaan om je voertuig als geweldsmiddel te gebruiken. Ook indien iemand niet overlijdt, telt dit als VDM.",
+      examples: [
+        "Je auto gebruiken om iemand opzettelijk aan te rijden",
+        "Voertuig inzetten als wapen tijdens gevechten"
+      ]
+    },
+    7: {
+      title: "RDM (Random Deathmatch)",
+      fullContent: "Het is niet toegestaan om zonder goede aanleiding iemand van het leven te beroven of te mishandelen. Dit geldt ook voor dieren.",
+      examples: [
+        "Zonder reden iemand doodschieten",
+        "Indien een persoon zonder goede aanleiding mensen van het leven beroofd kan een stafflid besluiten om het gebruikte wapen in beslag te nemen"
+      ],
+      note: "Indien je iemand achtervolgt, diegene een waarschuwingsschot afvuurt en jij blijft achtervolgen, dan mag jij beschoten worden. Dit geldt ook voor het doorvliegen in een helicopter na een waarschuwingsschot."
+    },
+    8: {
+      title: "No Value Of Life",
+      fullContent: "Het is niet toegestaan geen waarde te hechten aan het leven van het karakter dat je speelt.",
+      examples: [
+        "Indien er een vuurwapen op je gericht staat in de shouting voice range wordt er verwacht dat je blijft staan en mee werkt",
+        "Je dropt je items direct bij handsup (binnen 10 seconden)",
+        "Met een helikopter en/of vliegtuig vlak boven de grond vliegen of tussen gebouwen door",
+        "Weerstand bieden tegen een slag- of steekwapen wanneer deze binnen een meter van jou is",
+        "Al rijdend een ander voertuig blokkeren",
+        "Een zelfmoordscenario opzetten",
+        "Van een brug af springen zonder parachute"
+      ]
+    }
+  };
 
   const articles = [
     { id: 1, title: "Fail-RP en Powergaming", category: "openbare-orde", penalty: 2, description: "Slechte roleplay kwaliteit en onrealistische dwang" },
@@ -267,7 +347,11 @@ const Index = () => {
 
         <div className="space-y-4">
           {sectionArticles.map((article) => (
-            <Card key={article.id} className="hover:shadow-md transition-shadow">
+            <Card 
+              key={article.id} 
+              className="hover:shadow-md transition-shadow cursor-pointer"
+              onClick={() => setSelectedArticle(article)}
+            >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-lg font-semibold text-gray-900">
@@ -280,6 +364,7 @@ const Index = () => {
                   )}
                 </div>
                 <p className="text-gray-600">{article.description}</p>
+                <p className="text-sm text-blue-600 mt-2">Klik voor meer details en voorbeelden →</p>
               </CardContent>
             </Card>
           ))}
@@ -382,6 +467,81 @@ const Index = () => {
           </main>
         </div>
       </div>
+
+      {/* Article Detail Modal */}
+      <Dialog open={!!selectedArticle} onOpenChange={() => setSelectedArticle(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          {selectedArticle && articleDetails[selectedArticle.id] && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="flex items-center gap-3 text-xl">
+                  Artikel {selectedArticle.id} - {articleDetails[selectedArticle.id].title}
+                  {selectedArticle.penalty && (
+                    <Badge className={categories[selectedArticle.penalty - 1]?.color}>
+                      Categorie {selectedArticle.penalty}
+                    </Badge>
+                  )}
+                </DialogTitle>
+                <DialogDescription>
+                  Gedetailleerde uitleg en voorbeelden
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Beschrijving</h3>
+                  <p className="text-gray-700">{articleDetails[selectedArticle.id].fullContent}</p>
+                </div>
+
+                {articleDetails[selectedArticle.id].examples && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">Voorbeelden</h3>
+                    <ul className="space-y-2">
+                      {articleDetails[selectedArticle.id].examples.map((example, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-1">•</span>
+                          <span className="text-gray-700">{example}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {articleDetails[selectedArticle.id].powerGaming && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">Powergaming</h3>
+                    <p className="text-gray-700 mb-3">{articleDetails[selectedArticle.id].powerGaming}</p>
+                    {articleDetails[selectedArticle.id].powerExamples && (
+                      <ul className="space-y-2">
+                        {articleDetails[selectedArticle.id].powerExamples.map((example, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <span className="text-blue-600 mt-1">•</span>
+                            <span className="text-gray-700">{example}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+
+                {articleDetails[selectedArticle.id].note && (
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h3 className="text-lg font-semibold mb-2 text-yellow-800">Belangrijk</h3>
+                    <p className="text-yellow-700">{articleDetails[selectedArticle.id].note}</p>
+                  </div>
+                )}
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 text-blue-800">Strafmaat</h3>
+                  <p className="text-blue-700">
+                    {categories[selectedArticle.penalty - 1]?.name} - {categories[selectedArticle.penalty - 1]?.description}
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <footer className="bg-white border-t mt-16">
